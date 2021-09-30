@@ -1,4 +1,12 @@
-
+// Grace Lee
+// CPSC 120-01
+// 2021-09-30
+// grace1@csu.fullerton.edu
+// @gracelee2
+//
+// Lab 04-03
+//
+// About Command line arguments
 #include <iostream>
 #include <vector>
 
