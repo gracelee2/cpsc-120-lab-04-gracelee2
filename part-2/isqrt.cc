@@ -19,12 +19,12 @@ int main(int argc, char const* argv[]) {
   int square_root = 0;
   int initial_estimate = input_number/2;
   if(initial_estimate == 0){
-    input_number = square_root;
+    square_root = input_number;
   }else{
     int next_estimate = (initial_estimate + input_number/initial_estimate)/2;
 
   while(next_estimate < initial_estimate){
-    next_estimate = initial_estimate;
+    initial_estimate = next_estimate;
     next_estimate = (initial_estimate + input_number/initial_estimate)/2;
   }
   square_root = next_estimate;
