@@ -21,11 +21,13 @@ int main(int argc, char const *argv[]) {
           "1 and 100.\n";
   cout << "Let's play a guessing game...\n";
   bool is_game_over = false;
-  int difference_guess = kSecretNumber - guess;
-  int difference_last_guess = kSecretNumber - last_guess;
+
   while (is_game_over == false) {
     cout << "What's your guess?> ";
     cin >> guess;
+    int difference_guess = kSecretNumber - guess;
+    int difference_last_guess = kSecretNumber - last_guess;
+    last_guess = guess;
    if (guess == kSecretNumber){
     cout << "\tHooray! You guessed the secret number!!\n";
     cout << "Do you want to play again? (y or n)>";
@@ -35,9 +37,9 @@ int main(int argc, char const *argv[]) {
     } else if(answer == "y"){
       is_game_over = false;
     }
-    guess = last_guess;
 
-  } else if(difference_guess > difference_last_guess){
+
+  } else if(difference_guess < difference_last_guess){
     cout <<"\tYou're getting warmer.\n";
   } else {
     cout <<"\tYou're getting colder.\n";
