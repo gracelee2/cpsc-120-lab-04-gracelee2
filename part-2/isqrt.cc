@@ -27,8 +27,8 @@ int main(int argc, char const* argv[]) {
     next_estimate = initial_estimate;
     next_estimate = (initial_estimate + input_number/initial_estimate)/2;
   }
-  initial_estimate = square_root;
-  return square_root;
+  square_root = next_estimate;
+
 }
 
 
