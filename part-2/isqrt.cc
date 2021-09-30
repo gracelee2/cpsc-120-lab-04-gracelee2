@@ -21,8 +21,15 @@ int main(int argc, char const* argv[]) {
   if(initial_estimate == 0){
     input_number = square_root;
   }else{
-    int next_estimate = initial_estimate + input_number;
+    int next_estimate = (initial_estimate + input_number/initial_estimate)/2;
+
+  while(next_estimate < initial_estimate){
+    next_estimate = initial_estimate;
+    next_estimate = (initial_estimate + input_number/initial_estimate)/2;
   }
+  initial_estimate = square_root;
+  return square_root;
+}
 
 
   // TODO: Use Heron's method as described in the README to calculate the
@@ -32,5 +39,6 @@ int main(int argc, char const* argv[]) {
 
   cout << "The integer square root of " << input_number << " is " << square_root
        << ".\n";
+
   return 0;
 }
