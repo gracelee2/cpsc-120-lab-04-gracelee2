@@ -17,25 +17,20 @@ int main(int argc, char const* argv[]) {
   int input_number = 0;
   cin >> input_number;
   int square_root = 0;
-  int initial_estimate = input_number/2;
-  if(initial_estimate == 0){
+  int initial_estimate = input_number / 2;
+  if (initial_estimate == 0) {
     square_root = input_number;
-  }else{
-    int next_estimate = (initial_estimate + input_number/initial_estimate)/2;
+  } else {
+    int next_estimate =
+        (initial_estimate + input_number / initial_estimate) / 2;
 
-  while(next_estimate < initial_estimate){
-    initial_estimate = next_estimate;
-    next_estimate = (initial_estimate + input_number/initial_estimate)/2;
+    while (next_estimate < initial_estimate) {
+      initial_estimate = next_estimate;
+      next_estimate = (initial_estimate + input_number / initial_estimate) / 2
+;
+    }
+    square_root = next_estimate;
   }
-  square_root = next_estimate;
-
-}
-
-
-  // TODO: Use Heron's method as described in the README to calculate the
-  // integer square root of input_number and store it in square_root.
-  // Use the information in the README.md to write the loop
-  // using the pseudocode algorithm.
 
   cout << "The integer square root of " << input_number << " is " << square_root
        << ".\n";
